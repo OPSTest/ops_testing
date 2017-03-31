@@ -4,18 +4,18 @@
 
 **Reference repos**
 
-> The following Test repos are used for PPE environment.
+> These test repos are used for PPE environment.
 
 |GitHub repository|Description|
 |-----------------|-----------------|
-|[DocsRepo](https://github.com/OPS-E2E-PPE/E2E_DocsBranch)|The Docs theme test repo for PPE environment|
+|[DOCSRepo](https://github.com/OPS-E2E-PPE/E2E_DocsBranch)|The Docs theme test repo for PPE environment|
 |[MSDNRepo](https://github.com/OPS-E2E-PPE/E2E_MSDNBranch)|The MSDN theme test repo for PPE environment|
-|[TechNetRepo](https://github.com/OPS-E2E-PPE/E2E_TechnetBranch)|The TechNet theme test repo for PPE environment|
+|[TECHNETRepo](https://github.com/OPS-E2E-PPE/E2E_TechnetBranch)|The TechNet theme test repo for PPE environment|
 |[VSCOMRepo](https://github.com/OPS-E2E-PPE/E2E_VSCOMBranch)|The VSCom theme test repo for PPE environment|
 
 **Test cases behaviors,description and check points**
 
-> Following are the regression automation test cases. You can see the report [here](## Regression automaiton build test cases).
+> Following are the regression automation test cases. You can see the report [here](#report).
 
 |User Behaviors/Area|Description|Check points|
 |---------------------------|---------------------------|---------------------------------------|
@@ -33,9 +33,9 @@
 
 ## Regression mannual build test cases
 
-**Test cases behaviors,description and check points**
+> Following are the regression mannual build test cases. The cases need to testing after PPE and Production deploayment every sprint.
 
-> Following are the regression mannual build test cases. These cases need to testing after PPE and Production deploayment every sprint.
+**Test cases behaviors,description and check points**
 
 |User Behaviors/Area|Description|Check points|
 |---------------------------|---------------------------|---------------------------------------|
@@ -49,3 +49,5 @@
 |Warning in PR comments|Step1. modify a token to contain an invalid link  for repository https://github.com/openpublishtest/azure-docs-pr.<br/>Step2. create a PR.|1. The report should has this warning<br/>2. The pr comments in github also has this warning.|
 |Extra text will not change warning count|Step1.  trigger an incremental build for repository https://github.com/openpublishtest/azure-docs-pr.<br/>Step2.  Modify a file which contains lots of link to other mds to add some extra text.<br/>Step3. trigger an incremental build.|The warning count should be the same.|
 |[LSI 941427](https://mseng.visualstudio.com/VSChina/_workitems?id=941427&fullScreen=true&_a=edit)|Step1: trigger a force publishing on repository https://github.com/openpublishtest/Azure-RMSDocs-pr LSI941427 branch.<br/>Step2: after the force publishing completes, reopen https://github.com/openpublishtest/Azure-RMSDocs-pr/pull/1<br/>Step3: wait for the PR validation build completes|1. In force publishing of LSI941427 branch, the publishing succeeds or succeeds with warnings.<br/>2. The PR validation build on PR #1 passes. There is no error like: Error occurred: System.ArgumentException: An item with the same key has already been added. at System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add) at Microsoft.OpenPublishing.Build.Applications.ResolveDependencyConsole.Program.ResolveDependency(Options options) at Microsoft.OpenPublishing.Build.Applications.ResolveDependencyConsole.Program.Process(Options options)|
+
+## <a id="report"> </a>Automation running report
