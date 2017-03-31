@@ -4,17 +4,18 @@
 
 **Reference repos**
 
-The following Test repos are used for PPE environment.
+> The following Test repos are used for PPE environment.
+
 |GitHub repository|Description|
-|-----------------|---------------|
+|-----------------|-----------------|
 |[DocsRepo](https://github.com/OPS-E2E-PPE/E2E_DocsBranch)|The Docs theme test repo for PPE environment|
 |[MSDNRepo](https://github.com/OPS-E2E-PPE/E2E_MSDNBranch)|The MSDN theme test repo for PPE environment|
 |[TechNetRepo](https://github.com/OPS-E2E-PPE/E2E_TechnetBranch)|The TechNet theme test repo for PPE environment|
 |[VSCOMRepo](https://github.com/OPS-E2E-PPE/E2E_VSCOMBranch)|The VSCom theme test repo for PPE environment|
 
+**Test cases behaviors,description and check points**
 
-
-**E2E test cases behaviors,description and check points**
+> Following are the regression automation test cases. You can see the report [here](## Regression automaiton build test cases).
 
 |User Behaviors/Area|Description|Check points|
 |---------------------------|---------------------------|---------------------------------------|
@@ -31,6 +32,10 @@ The following Test repos are used for PPE environment.
 |[Local build] Local build|User runs .openpublishing.build.ps1 in local cloned repository and the script generates build outputs.|1. Pages has been generated under root/_sites folder <br/>2. The build result is OK|
 
 ## Regression mannual build test cases
+
+**Test cases behaviors,description and check points**
+
+> Following are the regression mannual build test cases. These cases need to testing after PPE and Production deploayment every sprint.
 
 |User Behaviors/Area|Description|Check points|
 |---------------------------|---------------------------|---------------------------------------|
