@@ -51,5 +51,10 @@
 |Extra text will not change warning count|Step1.  trigger an incremental build for repository https://github.com/openpublishtest/azure-docs-pr.<br/>Step2.  Modify a file which contains lots of link to other mds to add some extra text.<br/>Step3. trigger an incremental build.|The warning count should be the same.|
 |[LSI 941427](https://mseng.visualstudio.com/VSChina/_workitems?id=941427&fullScreen=true&_a=edit)|Step1: trigger a force publishing on repository https://github.com/openpublishtest/Azure-RMSDocs-pr LSI941427 branch.<br/>Step2: after the force publishing completes, reopen https://github.com/openpublishtest/Azure-RMSDocs-pr/pull/1<br/>Step3: wait for the PR validation build completes|1. In force publishing of LSI941427 branch, the publishing succeeds or succeeds with warnings.<br/>2. The PR validation build on PR #1 passes. There is no error like: Error occurred: System.ArgumentException: An item with the same key has already been added. at System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add) at Microsoft.OpenPublishing.Build.Applications.ResolveDependencyConsole.Program.ResolveDependency(Options options) at Microsoft.OpenPublishing.Build.Applications.ResolveDependencyConsole.Program.Process(Options options)|
 
-## <a id="report"> </a>Automation running report
-* 
+## <a id="report"> </a>Automation case running report
+Report address：https://vsctestportal.azurewebsites.net/Ops
+
+Now we have two jobs to running the test case.
+
+* E2E test run on production: Triggered every 30 minutes
+* E2E test run on PPE: Triggered every 2 hour
