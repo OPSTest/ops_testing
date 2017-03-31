@@ -1,12 +1,12 @@
 # OPS build E2E Test cases and descriptions
 
-## Automaiton build test cases
+## Regression automaiton build test cases
 
 **Reference repos**
 
+The following Test repos are used for PPE environment.
 |GitHub repository|Description|
 |-----------------|---------------|
-|[openpublishing-test](https://github.com/Microsoft/openpublishing-test)||
 |[DocsRepo](https://github.com/OPS-E2E-PPE/E2E_DocsBranch)|The Docs theme test repo for PPE environment|
 |[MSDNRepo](https://github.com/OPS-E2E-PPE/E2E_MSDNBranch)|The MSDN theme test repo for PPE environment|
 |[TechNetRepo](https://github.com/OPS-E2E-PPE/E2E_TechnetBranch)|The TechNet theme test repo for PPE environment|
@@ -30,3 +30,17 @@
 |[Build/Publish] I can build PDF when someone pushes changes into the branch or manually triggered from portal||Download the packges and check if all the pdf has generated|
 |[Local build] Local build|User runs .openpublishing.build.ps1 in local cloned repository and the script generates build outputs.|1. Pages has been generated under root/_sites folder <br/>2. The build result is OK|
 
+## Regression mannual build test cases
+
+|User Behaviors/Area|Description|Check points|
+|---------------------------|---------------------------|---------------------------------------|
+|Azure en-us repository full build|Step1. Create a new branch from master on repository https://github.com/openpublishtest/azure-docs-pr. <br/>Step2. … (no more for this as new branch will always trigger force build and publish)|1.Build result should be same with https://github.com/Microsoft/azure-docs-pr <br/>2. Visit published page on your branch to see if Redering is OK.<br/>3. Compare build time with prod|
+|zure cs-cz repository incremental build|Step1. trigger a build (full) on live branch for repository.https://github.com/openpublishtest/azure-docs-pr.cs-cz. <br/>Step2. once the build completed in Step1, trigger another build (incremental) on live branch.|1. Incremental build result should be succeed or succeed with warning.<br/>2. Visit published page on your branch to see if Redering is OK|
+|.Net repository build|Step1.  trigger a build on master branch for repositoryhttps://github.com/openpublishtest/docs| 1.Build result should be succeed or succeed with warning.<br/>2. Visit published page on your branch to see if Redering is OK|
+|[RCA_Documentation](https://mseng.visualstudio.com/DefaultCollection/VSChina/_git/RCA_Documentation) repository builds (full and incremental)|Step1. trigger a build (full) on master branch for repository.https://mseng.visualstudio.com/DefaultCollection/VSChina/_git/RCA_Documentation.<br/>Step2. once the full build completed in Step1, trigger another build (incremental) on master branch.|1. Both full and incremental build result should be succeed or succeed with warning.<br/>2. Visit published page on your branch to see if Redering is OK|
+|[OpenPublishing.ManualTesting](https://mseng.visualstudio.com/VSChina/_git/OpenPublishing.ManualTesting) repository builds (full and incremental)|Step1.  trigger a build (full) on master branch for repositoryhttps://mseng.visualstudio.com/VSChina/_git/OpenPublishing.ManualTesting.<br/>Step2. once the full build completed in Step1, trigger another build (incremental) on master branch.|1. Both full and incremental build result should be succeed or succeed with warning.<br/>2. Visit published page on your branch to see if Redering is OK|
+|Azure en-us repository performance|Step1. trigger a force build on master branch for repository https://github.com/openpublishtest/azure-docs-pr.<br/>Step2. once the full build completed in Step1, trigger another build (incremental) on master branch.<br/>Step3. once the full build completed in Step1, create a PR to master branch.|1. Monitor the build time in Step2 (incremental publish).<br/>2. Monitor the build time in Step3 (incremental PR).<br/>3. Monitor the trend of build time to see if there is performance downgrade.<br/>4. Furthermore, monitor the time of each step to see if there is performance downgrade.|
+|Invalid token for same warning count|Step1.  create a token with warning for repository https://github.com/openpublishtest/azure-docs-pr.<br/>Step2. trigger a full build (force publish).<br/>Step3. trigger an incremental build.|1. The warning count should be the same.|
+|Warning in PR comments|Step1. modify a token to contain an invalid link  for repository https://github.com/openpublishtest/azure-docs-pr.<br/>Step2. create a PR.|1. The report should has this warning<br/>2. The pr comments in github also has this warning.|
+|Extra text will not change warning count|Step1.  trigger an incremental build for repository https://github.com/openpublishtest/azure-docs-pr.<br/>Step2.  Modify a file which contains lots of link to other mds to add some extra text.<br/>Step3. trigger an incremental build.|The warning count should be the same.|
+|[LSI 941427](https://mseng.visualstudio.com/VSChina/_workitems?id=941427&fullScreen=true&_a=edit)|Step1: trigger a force publishing on repository https://github.com/openpublishtest/Azure-RMSDocs-pr LSI941427 branch.<br/>Step2: after the force publishing completes, reopen https://github.com/openpublishtest/Azure-RMSDocs-pr/pull/1<br/>Step3: wait for the PR validation build completes|1. In force publishing of LSI941427 branch, the publishing succeeds or succeeds with warnings.<br/>2. The PR validation build on PR #1 passes. There is no error like: Error occurred: System.ArgumentException: An item with the same key has already been added. at System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add) at Microsoft.OpenPublishing.Build.Applications.ResolveDependencyConsole.Program.ResolveDependency(Options options) at Microsoft.OpenPublishing.Build.Applications.ResolveDependencyConsole.Program.Process(Options options)|
