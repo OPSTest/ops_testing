@@ -33,7 +33,8 @@
 
 ## Regression mannual build test cases
 
-> Following are the regression mannual build test cases. The cases need to testing after PPE and Production deploayment every sprint.
+ > [!NOTE]
+ > Following are the regression mannual build test cases. The cases need to testing after PPE and Production > deploayment every sprint.
 
 **Test cases behaviors,description and check points**
 
@@ -51,3 +52,4 @@
 |[LSI 941427](https://mseng.visualstudio.com/VSChina/_workitems?id=941427&fullScreen=true&_a=edit)|Step1: trigger a force publishing on repository https://github.com/openpublishtest/Azure-RMSDocs-pr LSI941427 branch.<br/>Step2: after the force publishing completes, reopen https://github.com/openpublishtest/Azure-RMSDocs-pr/pull/1<br/>Step3: wait for the PR validation build completes|1. In force publishing of LSI941427 branch, the publishing succeeds or succeeds with warnings.<br/>2. The PR validation build on PR #1 passes. There is no error like: Error occurred: System.ArgumentException: An item with the same key has already been added. at System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add) at Microsoft.OpenPublishing.Build.Applications.ResolveDependencyConsole.Program.ResolveDependency(Options options) at Microsoft.OpenPublishing.Build.Applications.ResolveDependencyConsole.Program.Process(Options options)|
 
 ## <a id="report"> </a>Automation running report
+* 
