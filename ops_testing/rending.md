@@ -4,9 +4,11 @@
 
 **Reference repos**: https://github.com/OPS-E2E-PPE/E2E_DocsBranch
 
+Most of these tests are checking the markdown syntax to make sure they're have the correct behavior on the page. 
+
 **Test cases behaviors,description and check points**
 
-Most of these tests are checking the markdown syntax to make sure they're have the correct behavior on the page. 
+(./ops-build-e2e/ops-build-e2e-testcases.md#report).
 
 |User Behaviors/Area|Description|Check points|
 |---------------------------|---------------------------|---------------------------------------|
