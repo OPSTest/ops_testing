@@ -4,8 +4,6 @@
 
 **Reference repos**
 
-> These test repos are used for PPE environment.
-
 |GitHub repository|Description|
 |-----------------|-----------------|
 |[DOCSRepo](https://github.com/OPS-E2E-PPE/E2E_DocsBranch)|The Docs theme test repo for PPE environment|
@@ -15,7 +13,7 @@
 
 **Test cases behaviors,description and check points**
 
-> Following are the regression automation test cases. You can see the report [here](#report).
+Following are the regression automation test cases. You can see the report [here](#report).
 
 |User Behaviors/Area|Description|Check points|
 |---------------------------|---------------------------|---------------------------------------|
@@ -30,11 +28,20 @@
 |[Build/Publish] Build report|Should check build files count, resource count, warning/error count, output url, etc.|1. Build/PR will both receive email <br/>2. PR will always see the build status on the PR page <br/>3. PR will see the comments once the PR comment is enable|
 |[Build/Publish] I can build PDF when someone pushes changes into the branch or manually triggered from portal||Download the packges and check if all the pdf has generated|
 |[Local build] Local build|User runs .openpublishing.build.ps1 in local cloned repository and the script generates build outputs.|1. Pages has been generated under root/_sites folder <br/>2. The build result is OK|
+|[Provision] User add locale in existing repo and do provision for this locale.|New repo will be created and provisioned.|Topic reference a topic not in loc repo. Should be fallback to default locale.|
+|[Provision] User de-provision the repo|||
+|[Provision] User changes docset config|If user changes base path, themes, should check published url/page||
+|[Cross-repository] Dependency build|If repoA has dependency on repoB, and the dependency relationship is set. Then if repoB is changed, repoA should also be built.||
+|[Cross-repository] Token/code snippets locale fallback behavior||1.If token/code snippets doesn't exist in localized repository but only in fallback repository. <br/>2.The build can still pass The content should be rendered OK except the token/code snippets is same with fallback repository|
+|[Cross-repository] include source files from another rep||Similar with the above one|
+|[Cross-repository] Syncing between repos|||
 
 ## Regression mannual build test cases
 
  > [!NOTE]
- > Following are the regression mannual build test cases. The cases need to testing after PPE and Production > deploayment every sprint.
+ > The regression mannual build test cases need to testing after PPE and Production deploayment every sprint.
+
+**Reference repo**: https://github.com/openpublishtest/azure-docs-pr
 
 **Test cases behaviors,description and check points**
 
@@ -51,10 +58,11 @@
 |Extra text will not change warning count|Step1.  trigger an incremental build for repository https://github.com/openpublishtest/azure-docs-pr.<br/>Step2.  Modify a file which contains lots of link to other mds to add some extra text.<br/>Step3. trigger an incremental build.|The warning count should be the same.|
 |[LSI 941427](https://mseng.visualstudio.com/VSChina/_workitems?id=941427&fullScreen=true&_a=edit)|Step1: trigger a force publishing on repository https://github.com/openpublishtest/Azure-RMSDocs-pr LSI941427 branch.<br/>Step2: after the force publishing completes, reopen https://github.com/openpublishtest/Azure-RMSDocs-pr/pull/1<br/>Step3: wait for the PR validation build completes|1. In force publishing of LSI941427 branch, the publishing succeeds or succeeds with warnings.<br/>2. The PR validation build on PR #1 passes. There is no error like: Error occurred: System.ArgumentException: An item with the same key has already been added. at System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add) at Microsoft.OpenPublishing.Build.Applications.ResolveDependencyConsole.Program.ResolveDependency(Options options) at Microsoft.OpenPublishing.Build.Applications.ResolveDependencyConsole.Program.Process(Options options)|
 
-## <a id="report"> </a>Automation case running report
-Report address：https://vsctestportal.azurewebsites.net/Ops
 
-Now we have two jobs to running the test case.
+## <a id="report"> </a>Automation cases running report
+OPS E2E automation test cases report address：https://vsctestportal.azurewebsites.net/Ops
+
+Now we have two jobs to running the cases:
 
 * E2E test run on production: Triggered every 30 minutes
 * E2E test run on PPE: Triggered every 2 hour
