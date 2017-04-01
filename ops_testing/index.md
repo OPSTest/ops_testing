@@ -45,6 +45,7 @@ Following are the regression automation test cases. You can see the report [here
 
 **Test cases behaviors,description and check points**
 
+[!div class="mx-tdBreakAll"]
 |User Behaviors/Area|Description|Check points|
 |---------------------------|---------------------------|---------------------------------------|
 |Azure en-us repository full build|Step1. Create a new branch from master on repository https://github.com/openpublishtest/azure-docs-pr. <br/>Step2. … (no more for this as new branch will always trigger force build and publish)|1.Build result should be same with https://github.com/Microsoft/azure-docs-pr <br/>2. Visit published page on your branch to see if Redering is OK.<br/>3. Compare build time with prod|
