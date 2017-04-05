@@ -1,4 +1,4 @@
-# OPS build E2E Test cases and **Description**s
+# OPS build E2E Test cases and descriptions
 
 ## Regression automaiton build test cases
 
