@@ -69,9 +69,7 @@ Following are the regression automation test cases. You can see the report [here
         * Set PR state in GitHub when the job completes.
         * Email notification is sent - Optional.
 
-8. [Build/Publish] User did changes in configuration
-    * Op.config.json
-    * Docfx.json
+8. [Build/Publish] User did changes in configuration：1.Op.config.json 2. Docfx.json
 
     -  Description: Configuration change will cause.
         * build behavior change.
