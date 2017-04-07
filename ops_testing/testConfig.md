@@ -13,7 +13,7 @@
  1.Click ‘Connect to feed’ button and then 'Generate npm credentials', 
  2.Finally copy the credential text to a **.npmrc** file and saved to user home directory. (such as C:\Users\jinbwan\.npmrc)
 
- Opse2e is a cli-based tool, you could run the following command to exec e2e cases.
+ Opse2e is a cli-based tool, you could run the following command to exec e2e cases.  
  1.*npm run opse2e init*    
  It does something like ‘webdriver-manager update’, but download chrome driver to current node_modules directory. This command just need run once.
 
