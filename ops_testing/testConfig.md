@@ -28,4 +28,19 @@
  ## Running the test cases
  You can running the test cases with optional parms. For example:  
  *npm run opse2e -- protractor --suite pullRequest --baseUrl https://ops.microsoft.com/ --branch develop*  
- Please see the more information about the command
+ Please see the more information about the command:
+
+ |Command|Description|
+ |----|----|
+ |*--configFile \<configFile>*|[Protractor inherit] The path of protractor config js. Default to 'test/protractor.config.js'|
+ |*--baseUrl \<baseUrl>*|[Protractor inherit] The base url of the target test site|
+ |*--seleniumAddress \<seleniumAddress>*|[Protractor inherit] A running selenium address to use|
+ |*--exclude \<exclude>*|[Protractor inherit] Comma-separated list of files to exclude|
+ |*--suite \<suite>* |[Protractor inherit] Comma-separated list of suites to test|
+ |*--maxInstances \<maxInstances>*|[OPSE2E] Restricted to launch max browser instance number in parallel|
+ |*--branchName \<branchName>*|[OPSE2E] Add ?branch={branchName} to test url|
+ |*--reporterBaseDir \<reporterBaseDir>*|[OPSE2E] Base directory to save test result. Default to 'result/e2e/screenshots'|
+ |*--testData \<testData>*|[OPSE2E] Select the test data in different environment|
+ |*--preserveBaseDir*|[OPSE2E] Preserve test result base directory or not. Default to cleanup it before e2e started|
+ |*--noEscalation*|[OPSE2E] Escalate protractor exit code to parent process or not. Default to escalate it|
+ |*--throwConsoleError*|[OPSE2E] Throw an error for browser error logs or not. By defualt, just show warning in the reporter|  
